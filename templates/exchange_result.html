@@ -1,3 +1,4 @@
+{% from "macros.html" import show_flash_message, show_all_flash_message %}
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -6,9 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+
+    {{ show_all_flash_message() }}
+
     <h1>You selected {{ currency }} and ammount {{ ammount }}</h1>
     {% if currency_info.code != 'unknow' %}
-        <img src="{{ url_for('static', filename='currency_info.flag') }}" alt="">
+        <img src="{{ url_for('static', filename='currency_info.flag') }}">
     {% else %}
         <p>This currency is unknow for us - sorry</p>
     {% endif %}
