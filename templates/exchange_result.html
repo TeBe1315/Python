@@ -1,20 +1,15 @@
-{% from "macros.html" import show_flash_message, show_all_flash_message %}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-    {{ show_all_flash_message() }}
 
-    <h1>You selected {{ currency }} and ammount {{ ammount }}</h1>
+{% block body_header %}
+    You selected {{ currency }} and ammount {{ ammount }}
+{% endblock %}
+
+
+{% block body_content %}
     {% if currency_info.code != 'unknow' %}
         <img src="{{ url_for('static', filename='currency_info.flag') }}">
     {% else %}
         <p>This currency is unknow for us - sorry</p>
     {% endif %}
-</body>
-</html>
+{% endblock %}

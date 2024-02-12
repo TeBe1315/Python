@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+{% extends "base.html" %}
+
+{% block body_header %}
+    Enter transiction details
+{% endblock %}
+
+{% block body_content %}
     <form id="echange_form" action="{{ url_for('exchange') }}" method="post">
         <label for="currency">Currency<label>
         <select id="currency" name="currency">
@@ -18,7 +16,7 @@
         <input type="text" id="ammount" name="ammount" value="100"><br>
         <input type="submit" value="send"><br>
     </form>
-
+{% endblock %}
 
 </body>
 </html>
